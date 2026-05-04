@@ -1,0 +1,144 @@
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  background: #fff7ef;
+  font-family: Arial, sans-serif;
+}
+
+.signup-left {
+  width: 50%;
+  position: relative;
+  padding: 45px;
+  background: linear-gradient(135deg, #fff4e8, #eaf4ff);
+  overflow: hidden;
+}
+
+.brand {
+  font-size: 30px;
+  color: #3b250f;
+}
+
+.signup-left h2 {
+  font-size: 64px;
+  color: #4b2508;
+  line-height: 1.1;
+  margin-top: 90px;
+}
+
+.signup-left h3 {
+  font-size: 38px;
+  color: #ff8617;
+  margin-top: 10px;
+}
+
+.signup-left p {
+  color: #667085;
+  font-size: 18px;
+  margin-top: 35px;
+  width: 430px;
+}
+
+.dog-img {
+  position: absolute;
+  bottom: 0;
+  left: 170px;
+  width: 420px;
+  height: auto;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.love-badge {
+  position: absolute;
+  bottom: 35px;
+  left: 40px;
+  background: #ff8a18;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.signup-right {
+  width: 50%;
+  background: white;
+  border-top-left-radius: 70px;
+  border-bottom-left-radius: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-box {
+  width: 520px;
+}
+
+.welcome {
+  color: #ff8a18;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.signup-box h2 {
+  font-size: 56px;
+  color: #13213b;
+  margin: 5px 0;
+}
+
+.sub {
+  color: #667085;
+  margin-bottom: 35px;
+}
+
+.signup-box label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  color: #566176;
+  font-weight: bold;
+}
+
+.signup-box input {
+  width: 100%;
+  padding: 18px;
+  border: 1px solid #e0e4ec;
+  border-radius: 16px;
+  font-size: 16px;
+  outline: none;
+}
+
+.signup-box button {
+  width: 100%;
+  margin-top: 30px;
+  padding: 18px;
+  background: #ff8a18;
+  color: white;
+  border: none;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-text {
+  text-align: center;
+  margin-top: 25px;
+  color: #667085;
+}
+
+.login-text span {
+  color: #ff8a18;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.features {
+  margin-top: 35px;
+  background: #eef5ff;
+  padding: 14px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
+  color: #667085;
+  font-size: 14px;
+}

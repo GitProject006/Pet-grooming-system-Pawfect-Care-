@@ -1,0 +1,18 @@
+*{
+  padding: 0;
+  margin: 0 ;
+}
+.brand-logo {
+  font-size: 28px;
+  font-weight: 900;
+  color: #2d1c10;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-text {
+  font-size: 20px;
+  margin-left: 15px;
+  color: #1f2937;
+}
