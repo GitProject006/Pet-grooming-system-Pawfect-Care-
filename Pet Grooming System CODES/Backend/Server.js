@@ -5,8 +5,9 @@ require('./db/config')
 const authRoutes = require("./routes/authRoutes")
 const adminRoutes = require("./routes/adminRoutes")
 const userRoutes = require('./routes/userRoutes')
+app.use(express.json())
 
-app.use(express.json())app.use(cors({
+app.use(cors({
     origin: "*",
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true
