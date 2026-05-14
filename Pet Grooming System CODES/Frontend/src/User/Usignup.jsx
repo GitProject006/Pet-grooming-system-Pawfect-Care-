@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API from '../api';
 import "./Signup.css";
 
 const Usignup = () => {
@@ -14,9 +15,7 @@ const Usignup = () => {
     e.preventDefault();
 
     let payload = { name, email, password };
-
-    axios
-      .post("http://localhost:8000/api/auth/usignup", payload)
+axios.post(`${API}/api/auth/usignup`, payload)
       .then((result) => {
         alert('Account created');
         console.log(result);
