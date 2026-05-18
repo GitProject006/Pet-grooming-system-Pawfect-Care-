@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
-// import '../Host/List.css';
 import Unavbar from './Unavbar';
 import moment from 'moment';
 import 'moment-timezone';
+import API from '../api';
 
 function BookAdditional() {
   const [item, setItem] = useState({});
@@ -17,13 +17,11 @@ function BookAdditional() {
   });
 
   const [quantity, setQuantity] = useState(1);
-
- 
   const { id } = useParams();
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/getadditional/${id}`)
+    axios.get(`${API}/getadditional/${id}`)
       .then((resp) => {
         setItem(resp.data);
         console.log(resp.data)
@@ -40,46 +38,29 @@ function BookAdditional() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-    // //   Ensure item is available and contains the required properties
-    //   if (!item || !item.description || !item.price || !item.name || !item.boardingAndDaycare || !item.trainingClasses) {
-    //     throw new Error('Item data is missing required properties');
-    //   }
-      
-
-      const { name, description, price,duration,boardingAndDaycare,trainingClasses} = item;
-
+      const { name, description, price, duration, boardingAndDaycare, trainingClasses } = item;
       const totalAmount = price + 49;
-      // const quantity=quantity;
-      
-
-      // Add the item properties to the formData
       const updatedFormData = {
         ...formData,
         totalamount: totalAmount,
         description: description,
         ServiceName: name,
-        duration:duration,
-        boardingAndDaycare:boardingAndDaycare,
-        trainingClasses:trainingClasses,        
+        duration: duration,
+        boardingAndDaycare: boardingAndDaycare,
+        trainingClasses: trainingClasses,
       };
-
-      // You can add user-specific data here
       const userid = JSON.parse(localStorage.getItem('user')).id;
       const username = JSON.parse(localStorage.getItem('user')).name;
       updatedFormData.userId = userid;
       updatedFormData.userName = username;
-
       updatedFormData.time = moment.tz(formData.time, 'HH:mm', 'Asia/Kolkata').format('hh:mm A');
-      // Post the updatedFormData
       const token = localStorage.getItem("token");
-
-await axios.post("http://localhost:8000/bookadditional", updatedFormData, {
-  headers: {
-    Authorization: `Bearer ${token}`
-  }
-});     
+      await axios.post(`${API}/bookadditional`, updatedFormData, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
       console.log(updatedFormData);
       alert('booked successfully');
       navigate('/mybookings');
@@ -95,13 +76,10 @@ await axios.post("http://localhost:8000/bookadditional", updatedFormData, {
         <div className="max-w-md mx-auto mt-8 p-4 border rounded shadow-lg bg-white">
           <h2 className="text-2xl font-semibold" >Your Booking is almost Done! </h2>
           <br/>
-          {/* <p>item name:{item.itemtype}</p> */}
           <form onSubmit={handleSubmit}>
-
             <div >
               <label className="block text-gray-600 text-center" style={{ paddingTop: "10px" }}>Details:</label>
               <div class="input-container">
-
                 <input type="text" id="myInput" class="w-48 p-2 border border-gray-300 rounded focus:outline-none" placeholder=" " style={{ width: "340px" }}
                   name="name"
                   value={formData.name}
@@ -144,17 +122,14 @@ await axios.post("http://localhost:8000/bookadditional", updatedFormData, {
               </div>
             </div>
             <br/>
-            <input type='time' name='time' value={formData.time}onChange={handleChange} required />
+            <input type='time' name='time' value={formData.time} onChange={handleChange} required />
             <br/>
             <br/>
-            <input type='date' name='date' value={formData.date}onChange={handleChange} required />
+            <input type='date' name='date' value={formData.date} onChange={handleChange} required />
             <br />
             <br />
             {item && (
               <div>
-                <div style={{ display: "flex", justifyContent: "flex-end", height: "100%", width: "100%" }} >
-                </div>
-
                 <div style={{ display: 'flex', justifyContent: "space-between" }}>
                   <p style={{ fontSize: "17px" }}>Price:</p>
                   <p> ₹ {quantity * item.price}</p>
