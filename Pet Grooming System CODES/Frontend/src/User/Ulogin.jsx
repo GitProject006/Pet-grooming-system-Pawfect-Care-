@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import API from '../api';
 import { FaSignOutAlt } from 'react-icons/fa';
 
 const Ulogin = () => {
@@ -13,8 +14,7 @@ const Ulogin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let payload = { email, password };
-    axios
-      .post("http://localhost:8000/api/auth/ulogin", payload)
+    axios.post(`${API}/api/auth/ulogin`, payload)
       .then((res) => {
         console.log("login: " + res.data.Status);
         if (res.data.Status === "Success") {
