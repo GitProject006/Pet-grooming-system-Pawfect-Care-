@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import Anavbar from './Anavbar';
-import API from '../../api';
+import API from './api';
 
 const UserEdit = () => {
   const [user, setUser] = useState({ name: '', email: '', password: '' });

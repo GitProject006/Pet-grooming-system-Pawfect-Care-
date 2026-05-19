@@ -3,7 +3,7 @@ import axios from 'axios';
 import './admin.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import Anavbar from './Anavbar';
-import API from '../../api';
+import API from './api';
 
 const UpdateGroom = () => {
   const [formData, setFormData] = useState({

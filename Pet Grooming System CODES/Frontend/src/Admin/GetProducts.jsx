@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Anavbar from './Anavbar';
 import './servicess.css';
-import API from '../../api';
+import API from './api';
 
 function GetProducts() {
   const [items, setItems] = useState([]);

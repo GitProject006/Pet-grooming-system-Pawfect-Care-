@@ -3,7 +3,7 @@ import axios from 'axios';
 import './admin.css';
 import Anavbar from './Anavbar';
 import { useNavigate } from 'react-router-dom';
-import API from '../../api';
+import API from './api';
 
 const AdditionalServices = () => {
   const [formData, setFormData] = useState({

@@ -3,7 +3,7 @@ import axios from 'axios';
 import Anavbar from './Anavbar';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaEdit, FaTrash } from "react-icons/fa";
-import API from '../../api';
+import API from './api';
 
 const GetGroom = () => {
   const [groomingServices, setGroomingServices] = useState([]);

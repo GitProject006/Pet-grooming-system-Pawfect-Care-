@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { FaSignOutAlt } from 'react-icons/fa';
-import API from '../../api';
+import API from './api';
 
 const Asignup = () => {
   const [name, setName] = useState('');

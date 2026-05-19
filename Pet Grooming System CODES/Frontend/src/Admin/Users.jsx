@@ -5,7 +5,7 @@ import { FaTrash, FaEdit } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Anavbar from './Anavbar';
 import QRCode from "react-qr-code";
-import API from '../../api';
+import API from './api';
 
 const Users = () => {
   const [items, setItems] = useState([]);

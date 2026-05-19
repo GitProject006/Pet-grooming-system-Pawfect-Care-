@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./admin.css";
 import Anavbar from "./Anavbar";
-import API from '../../api';
+import API from './api';
 
 const Products = () => {
   const [name, setName] = useState("");
