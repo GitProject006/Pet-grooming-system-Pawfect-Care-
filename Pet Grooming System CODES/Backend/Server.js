@@ -8,7 +8,7 @@ const userRoutes = require('./routes/userRoutes')
 app.use(express.json())
 
 app.use(cors({
-    origin: "*",
+   origin: "https://pet-grooming-system-pawfect-care.vercel.app",
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true
 }))
